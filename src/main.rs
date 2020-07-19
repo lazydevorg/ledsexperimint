@@ -27,15 +27,17 @@ fn main() -> ! {
 
     let mut leds = Leds::new(dp.GPIOE.split(&mut rcc.ahb));
 
-    let half_period = 100_u16;
+    let half_period = 50_u16;
 
     loop {
-        leds[0].on();
-        leds[1].off();
-        delay.delay_ms(half_period);
+        for led in 0..8 {
+            leds[led].on();
+            delay.delay_ms(half_period);
+        }
 
-        leds[0].off();
-        leds[1].on();
-        delay.delay_ms(half_period);
+        for led in 0..8 {
+            leds[led].off();
+            delay.delay_ms(half_period);
+        }
     }
 }
