@@ -19,7 +19,20 @@
             "svdFile": "${workspaceRoot}/resources/STM32F303.svd",
             "preLaunchTask": "build",
             "runToMain": true,
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 8000000,
+                "swoFrequency": 2000000,
+                "source": "probe",
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "SWO output",
+                        "encoding": "ascii"
+                    }
+                ]
+            }
         }
-        
     ]
 }
